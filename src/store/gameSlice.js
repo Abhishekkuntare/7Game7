@@ -28,7 +28,7 @@ export const rollDice = (betAmount, betType, token) => async (dispatch) => {
   dispatch(setLoading(true));
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/roll",
+      "https://7-game7-backend.vercel.app/api/roll",
       { betAmount, betType },
       {
         headers: { Authorization: token },

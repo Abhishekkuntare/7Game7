@@ -21,10 +21,13 @@ export const { setPoints, setToken } = userSlice.actions;
 
 export const loginUser = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post("http://localhost:5000/api/login", {
-      username,
-      password,
-    });
+    const response = await axios.post(
+      "https://7-game7-backend.vercel.app/api/login",
+      {
+        username,
+        password,
+      }
+    );
     dispatch(setToken(response.data.token));
   } catch (error) {
     console.error("Error logging in", error);
@@ -33,7 +36,7 @@ export const loginUser = (username, password) => async (dispatch) => {
 
 export const registerUser = (username, password) => async () => {
   try {
-    await axios.post("http://localhost:5000/api/register", {
+    await axios.post("https://7-game7-backend.vercel.app/api/register", {
       username,
       password,
     });
